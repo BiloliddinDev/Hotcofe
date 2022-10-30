@@ -18,6 +18,9 @@
     flex-grow: 1;
     @include title;
   }
+  &__logo :hover{
+    color: red($color: #000000)
+  }
 
   &__link {
     @include text-decaration;
