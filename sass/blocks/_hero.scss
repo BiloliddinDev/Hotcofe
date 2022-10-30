@@ -1,0 +1,52 @@
+/* hero code start */
+
+.hero {
+  @include display(row, center, space-between);
+  margin-top: 150px;
+
+  &__heading {
+    @include heading;
+    display: flex;
+    text-align: left;
+    align-items: flex-end;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 62px;
+      right: 60px;
+      background-image: url(../../images/hero-2.png);
+      background-size: auto;
+      background-position: center;
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    color: #4a5568;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .hero {
+    flex-direction: column;
+    gap: 100px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .hero {
+    text-align: center;
+    &__image {
+      width: 320px;
+    }
+  }
+}
+
+/* hero code end */

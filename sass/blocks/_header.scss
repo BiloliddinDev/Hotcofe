@@ -1,0 +1,154 @@
+/* header code start  */
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 100;
+  &__nav {
+    width: 100%;
+    display: flex;
+    @include display(row, center, space-between);
+    padding: 40px;
+  }
+
+  &__logo {
+    flex-grow: 1;
+    @include title;
+  }
+
+  &__link {
+    @include text-decaration;
+  }
+
+  &__form {
+    margin-left: 100px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__search {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+
+  &__menu {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+  }
+
+  &__list2 {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+  }
+
+  &__list1 {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
+
+  &__link {
+    @include text;
+    color: #000000;
+  }
+
+  .fa-brands {
+    font-size: 24px;
+    transition: 0.5s ease;
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+
+  .parda {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .header {
+    &__list {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      @include display(column, center, center);
+      width: 50%;
+      height: 100vh;
+      gap: 50px;
+      background-color: rgb(139, 191, 236);
+      transition: all 0.5s ease-in-out;
+    }
+
+    &__list1 {
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+    }
+
+    &__link {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    &__menu {
+      display: flex;
+      font-size: 24px;
+    }
+
+    #menu:checked ~ .header__list {
+      left: 0;
+    }
+
+    .parda {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      width: 100%;
+      background-color: rgba(88, 134, 173, 0.589);
+      display: none;
+      z-index: -10;
+    }
+
+    #menu:checked ~ .parda {
+      display: flex;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .header {
+    &__search {
+      display: none;
+    }
+
+    &__form {
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    &__link {
+      font-size: 18px;
+      font-weight: 300;
+    }
+  }
+}
+
+/* header code end */

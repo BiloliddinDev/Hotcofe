@@ -1,0 +1,63 @@
+/* long code start */
+.long {
+  &__wrapper {
+    @include display(row, center, space-between);
+    border: 1px solid #e2e2e2;
+    box-shadow: 0px 5px 4px 0px #dddddd40;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    height: 243px;
+  }
+
+  &__left {
+    padding: 40px;
+  }
+
+  &__heading {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    color: #2d3748;
+  }
+
+  &__text {
+    @include text;
+    margin-bottom: 30px;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__data {
+    @include text;
+  }
+
+  &__link {
+    @include title;
+    text-decoration: none;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .long {
+    &__wrapper {
+      height: auto;
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .long {
+    &__image {
+      width: 350px;
+    }
+  }
+}

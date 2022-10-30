@@ -1,0 +1,49 @@
+.footer {
+  border-top: 1px solid #e8e8e8;
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+  }
+
+  &__span {
+    @include title;
+  }
+
+  .fa-brands {
+    font-size: 24px;
+  }
+}
+
+.box {
+  padding: 11px 9px;
+  background-color: $blue;
+  max-width: 160px;
+  border-radius: 5px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.btn {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    &__box {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      justify-content: center;
+    }
+  }
+}
